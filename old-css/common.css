@@ -1,0 +1,70 @@
+body {
+  /* height: 100%; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.my-button {
+  width: auto;
+  background-color: #0088FF;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.my-button:hover {
+  background-color: #0056b3;
+}
+
+.section_title {
+  text-align: left;
+  margin-left: 0;
+  padding-top: 30px;
+  font-size: 64px;
+  margin: 0 0 40px 0;
+  position: relative;
+  width: 100%;
+}
+
+.blue-letter {
+  color: #0088FF;
+}
+
+.section_title_item {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 64px;
+    margin: 0 0 40px 0;
+    position: relative;
+    width: 100%;
+}
+
+/*  フッターセクション */
+
+.footer {
+  background-image: url("../img/footer.jpg");
+  opacity: 0.8;
+  background-size: cover;
+  background-position: center;
+  color: #000000;
+  padding: 10px;
+  text-align: center;
+}
+
+.section_title_item {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 64px;
+  margin: 0 0 40px 0;
+  position: relative;
+  width: 100%;
+}

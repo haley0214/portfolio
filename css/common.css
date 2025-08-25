@@ -1,0 +1,124 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.my-button {
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #0088FF;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.my-button--large {
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #0088FF;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 20px 32px;
+  font-size: 24px;
+}
+
+.my-button:hover {
+  background-color: #0056b3;
+}
+
+.section_title {
+  text-align: left;
+  margin-left: 0;
+  padding-top: 30px;
+  font-size: 120px;
+  font-family: "Playfair Display", serif;
+  margin: 0 0 40px 0;
+  position: relative;
+  width: 100%;
+}
+
+.blue-letter {
+  color: #0088FF;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  margin-top: 60px;
+}
+
+.section_title_item {
+  text-align: center;
+  padding: 60px 0 40px 0;
+  font-size: 96px;
+  font-family: "Playfair Display", serif;
+  margin: 40px 0 40px 0;
+  position: relative;
+  width: 100%;
+}
+
+.work_section,
+.service_container {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.service_item img,
+.work_card img {
+  max-width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/*  フッターセクション */
+.footer {
+  background-image: url("../img/footer.jpg");
+  opacity: 0.8;
+  background-size: cover;
+  background-position: center;
+  color: #000000;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.footer_text {
+  font-size: 20px;
+}/*# sourceMappingURL=common.css.map */
