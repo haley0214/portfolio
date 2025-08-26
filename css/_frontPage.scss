@@ -289,26 +289,30 @@ section {
   padding: 40px 140px;
 
   .contact_container {
-    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     gap: 20px;
 
     .contact_form {
       display: flex;
-      flex-direction: column
-      margin-bottom: 40px;
+      flex-direction: column;
+      align-items: center;
+      gap:20px;
 
       label {
         display: block;
+        width: 500px;
         text-align: left;
         margin-top: 20px;
-        padding-left: 20px; // 共通化
+        padding-left: 20px; 
       }
 
       input[type="text"] {
         width: 500px;
         height: 40px;
+        margin: auto;
         border-radius: 50px;
         border: 1px solid #0088FF;
       }
