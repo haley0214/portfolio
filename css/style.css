@@ -45,22 +45,22 @@
   background-color: #0088FF;
   color: #fff;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 380px) {
   .header {
-    height: 70px;
-    padding-right: 10px;
+    height: 60px;
+    padding-right: 5px;
   }
   .header_list {
-    gap: 20px;
-    padding-right: 10px;
+    gap: 10px;
+    padding-right: 5px;
   }
   .header_item a {
-    font-size: 20px;
-    padding: 6px 8px;
+    font-size: 16px;
+    padding: 4px 6px;
   }
   .header_button a {
-    padding: 6px 12px;
-    font-size: 16px;
+    padding: 4px 8px;
+    font-size: 14px;
   }
 }
 
@@ -120,8 +120,7 @@ section {
   gap: 20px;
   padding: 80px 140px;
 }
-
-.work_section {
+.work_wrapper .work_section {
   margin: 0;
   padding: 0;
   display: grid;
@@ -130,8 +129,7 @@ section {
   width: 100%;
   box-sizing: border-box;
 }
-
-.work_card {
+.work_wrapper .work_section .work_card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,26 +140,22 @@ section {
   width: 100%;
   box-sizing: border-box;
 }
-
-.work_card img {
+.work_wrapper .work_section .work_card img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
-
-.work_description_title {
+.work_wrapper .work_section .work_card .work_description_title {
   font-size: 24px;
   margin: 15px 0;
 }
-
-.work_card ul {
+.work_wrapper .work_section .work_card ul {
   font-size: 16px;
   margin-bottom: 0px;
   list-style: none;
   padding-bottom: 20px;
 }
-
-.work_card ul li {
+.work_wrapper .work_section .work_card ul li {
   text-align: left;
 }
 
@@ -175,8 +169,7 @@ section {
   min-height: 100vh;
   padding: 80px 140px;
 }
-
-.about_container {
+.about_wrapper .about_container {
   margin: 0;
   padding: 0;
   display: flex;
@@ -185,22 +178,19 @@ section {
   width: 100%;
   box-sizing: border-box;
 }
-
-.about_item {
+.about_wrapper .about_container .about_item {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 100px;
 }
-
-.about_item img {
+.about_wrapper .about_container .about_item img {
   width: 500px;
   height: 500px;
   border-radius: 50%;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
   object-fit: cover;
 }
-
-.about_text {
+.about_wrapper .about_container .about_item .about_text {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -209,24 +199,13 @@ section {
   padding: 8px 24px;
   margin-top: 20px;
 }
-
-.about_name {
+.about_wrapper .about_container .about_item .about_text .about_name {
   font-size: 32px;
   font-weight: bold;
 }
-
-.about_description {
+.about_wrapper .about_container .about_item .about_text .about_description {
   text-align: left;
   font-size: 20px;
-}
-
-.my-button {
-  display: block;
-  margin: 10px auto 0;
-  padding: 8px 16px;
-  font-size: 20px;
-  width: auto;
-  min-width: 100px;
 }
 
 /* サービスセクション */
@@ -237,8 +216,7 @@ section {
   padding: 20px 140px;
   margin-bottom: 40px;
 }
-
-.service_item {
+.service_wrapper .service_item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -247,14 +225,12 @@ section {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
-
-.service_name {
+.service_wrapper .service_item .service_name {
   margin-top: 20px;
   font-size: 24px;
   font-weight: bold;
 }
-
-.service_discription {
+.service_wrapper .service_item .service_discription {
   text-align: left;
   list-style: none;
   margin-right: 30px;
@@ -269,49 +245,40 @@ section {
   gap: 20px;
   padding: 40px 140px;
 }
-
-.contact_container {
+.contact_wrapper .contact_container {
   margin: 0;
   padding: 0;
   justify-content: center;
   gap: 20px;
 }
-
-.contact_form {
+.contact_wrapper .contact_container .contact_form {
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
 }
-
-.contact_form label {
+.contact_wrapper .contact_container .contact_form label {
   display: block;
   text-align: left;
   margin-top: 20px;
+  padding-left: 20px;
 }
-
-input[type=text] {
+.contact_wrapper .contact_container .contact_form input[type=text] {
   width: 500px;
   height: 40px;
   border-radius: 50px;
-  border-color: #0088FF;
+  border: 1px solid #0088FF;
 }
-
-label {
-  display: inline-block;
-  padding-left: 20px;
-}
-
-textarea {
+.contact_wrapper .contact_container .contact_form textarea {
   width: 500px;
   height: 200px;
   border-radius: 50px;
-  border-color: #0088FF;
+  border: 1px solid #0088FF;
   padding: 10px;
 }
-
-.contact_description {
+.contact_wrapper .contact_container .contact_description {
   display: inline-block;
   text-align: left;
+  margin-top: 30px;
 }
 
 .header {
@@ -431,6 +398,17 @@ textarea {
   box-shadow: -8px 8px gray;
   margin-left: 50px;
   margin-top: -200px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.about_content.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.about_content.hidden {
+  opacity: 0;
+  transform: translateX(-120px);
 }
 .about_content .about_header {
   display: flex;
