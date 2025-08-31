@@ -1,14 +1,16 @@
 @charset "UTF-8";
+//@use 'setting' as s;
+@use 'sass:math';
+@use 'sass:map';
 
 $breakpoints: (
-  "sp": "(max-width: 380px)"
+  "sp": "(max-width: 767px)"
 );
 
 @mixin respond($point) {
-  @media #{map.get($breakpoints, $point)} {
+  @media #{map.get($breakpoints, $point)} 
+  {
     @content;
   }
 }
 
-@use 'setting' as s;
-@use 'sass:math';

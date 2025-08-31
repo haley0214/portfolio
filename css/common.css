@@ -9,10 +9,15 @@ body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
-  padding: 0;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+@media (max-width: 767px) {
+  body {
+    padding-top: 0;
+  }
 }
 
 .my-button {
@@ -63,6 +68,13 @@ body {
   position: relative;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .section_title {
+    font-size: 60px;
+    padding-top: 60px;
+    margin-bottom: 20px;
+  }
+}
 
 .blue-letter {
   color: #0088FF;
@@ -75,6 +87,15 @@ body {
   min-height: 100vh;
   margin-top: 60px;
 }
+@media (max-width: 767px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: 0;
+  }
+}
 
 .section_title_item {
   text-align: center;
@@ -85,8 +106,15 @@ body {
   position: relative;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .section_title_item {
+    font-size: 48px;
+    padding: 40px 0 20px 0;
+    margin: 100px 0 20px 0;
+  }
+}
 
-.work_section,
+.work_containers,
 .service_container {
   margin: 0;
   padding: 0;
@@ -96,13 +124,27 @@ body {
   width: 100%;
   box-sizing: border-box;
 }
+@media (max-width: 767px) {
+  .work_containers,
+  .service_container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
 
 .service_item img,
-.work_card img {
+.work_items img {
   max-width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: 8px;
+}
+@media (max-width: 767px) {
+  .service_item img,
+  .work_items img {
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+  }
 }
 
 /*  フッターセクション */
