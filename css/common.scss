@@ -23,6 +23,10 @@ body {
   }
 }
 
+.body_second {
+  padding-top: 0;
+}
+
 // ボタン用 mixin
 @mixin button-style($padding-y, $padding-x, $font-size) {
   display: block;
@@ -39,6 +43,7 @@ body {
   transition: background-color 0.3s ease;
   padding: $padding-y $padding-x;
   font-size: $font-size;
+  text-decoration: none
 }
 
 // 通常サイズ
@@ -49,6 +54,10 @@ body {
 // 一回り大きいサイズ
 .my-button--large {
   @include button-style(20px, 32px, 24px);
+
+  @include s.respond("sp") {  
+    @include button-style(12px, 24px, 16px); 
+  }
 }
 
 

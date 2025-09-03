@@ -20,6 +20,10 @@ body {
   }
 }
 
+.body_second {
+  padding-top: 0;
+}
+
 .my-button {
   display: block;
   width: auto;
@@ -35,6 +39,7 @@ body {
   transition: background-color 0.3s ease;
   padding: 12px 24px;
   font-size: 16px;
+  text-decoration: none;
 }
 
 .my-button--large {
@@ -52,6 +57,26 @@ body {
   transition: background-color 0.3s ease;
   padding: 20px 32px;
   font-size: 24px;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .my-button--large {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #0088FF;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 12px 24px;
+    font-size: 16px;
+    text-decoration: none;
+  }
 }
 
 .my-button:hover {

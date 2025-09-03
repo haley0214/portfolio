@@ -7,7 +7,7 @@
     <title>ポートフォリオ</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,18 @@
         <!-- ヘッダー -->
         <header class="header">
             <nav class="header_nav">
+                <div class="header_logo">
+                    <a href="index.html">Yuki</a>
+                </div>
+
+                <!-- ハンバーガーメニューアイコン -->
+                <div class="header_toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- ナビゲーションメニュー -->
                 <ul class="header_list">
                     <li class="header_item"><a href="#">Works</a></li>
                     <li class="header_item"><a href="#">About</a></li>
@@ -31,8 +43,6 @@
                 </ul>
             </nav>
         </header>
-
-        <!-- <div class="firstview_wrapper"> -->
 
         <!-- メイン -->
         <section>
@@ -51,30 +61,30 @@
         <div class="work_containers">
             <div class="work_items">
                 <img src="img/work1.png" alt="work">
-                <p class="work_name">＃うつわ屋こはる</p>
+                <h3 class="work_name">＃うつわ屋こはる</h3>
                 <ul>
                     <li>School work/架空ECサイト</li>
                     <li>Tool: VS Code/HTML(CSS)</li>
                 </ul>
-                <button class="my-button">もっと見る</button>
+                <a href="http://127.0.0.1:5501/works1.html" target="_blank" class="my-button">もっと見る</a>
             </div>
             <div class="work_items">
                 <img src="img/work2.png" alt="Work 2">
-                <p class="work_name">＃クッキングサイト</p>
+                <h3 class="work_name">＃クッキングサイト</h3>
                 <ul>
                     <li>School work/架空ECサイト</li>
                     <li>Tool: VS Code/HTML(CSS)</li>
                 </ul>
-                <button class="my-button">もっと見る</button>
+                <a href="http://127.0.0.1:5501/works2.html" target="_blank" class="my-button">もっと見る</a>
             </div>
             <div class="work_items">
                 <img src="img/work3.png" alt="Work 3">
-                <p class="work_name">＃フラワーショップ</p>
+                <h3 class="work_name">＃フラワーショップ</h3>
                 <ul>
                     <li>School work/架空ECサイト</li>
                     <li>Tool: VS Code/HTML(CSS)</li>
                 </ul>
-                <button class="my-button">もっと見る</button>
+                <a href="http://127.0.0.1:5501/works3.html" target="_blank" class="my-button">もっと見る</a>
             </div>
         </div>
     </section>
@@ -95,7 +105,7 @@
                         どうぞよろしくお願いいたします。</p>
                 </div>
             </div>
-            <button class="my-button--large">もっと見る</button>
+            <a href="http://127.0.0.1:5501/about.html" target="_blank" class="my-button--large ">もっと見る</a>
         </div>
     </section>
 
@@ -154,6 +164,7 @@
     <footer class="footer">
         <p class="footer_text">© 2023 Yuki Gondo. All rights reserved.</p>
     </footer>
-</body>
 
+    <script src="js/main.js"></script>
+</body>
 </html>
