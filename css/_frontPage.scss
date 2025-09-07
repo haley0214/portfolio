@@ -53,7 +53,7 @@
       font-size: 38px;
       text-decoration: none;
 
-      @include s.respond("sp") {
+      @include s.respond("tb") {
         font-size: 24px;
         padding: 10px 0;
         color: #fff;
@@ -73,15 +73,15 @@
         color: #fff;
       }
 
-      @include s.respond("sp") {
+      @include s.respond("tb") {
         padding: 10px 16px;
         font-size: 16px;
         color: #0088FF;
       }
     }
 
-    // スマホ用スライドメニュー
-    @include s.respond("sp") {
+    // タブレット用スライドメニュー
+    @include s.respond("tb") {
       display: flex;
       flex-direction: column;
       position: fixed;
@@ -97,6 +97,7 @@
 
       &.is-active {
         right: 0;
+        margin-top: 80px;
       }
     }
   }
@@ -105,7 +106,7 @@
   &_toggle {
     display: none;
 
-    @include s.respond("sp") {
+    @include s.respond("tb") {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -149,9 +150,16 @@
   background-position: center;
   height: calc(100vh - 100px);
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     height: auto;
     padding: 70px 20px 40px 20px;
+  }
+
+  @include s.respond("sp") {
+    height: 100vh;
+    padding: 30px 10px;
+    background-size: cover;
+    background-position: top;
   }
 }
 
@@ -160,54 +168,83 @@ section {
   gap: 30px;
   align-items: center;
   justify-content: center;
-  /* height: 400px; */
   text-align: center;
 }
 
 .main_wrapper {
   width: 100vw;
+  min-height: 60vh;
+  padding: 60px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.4);
 
-  @media (max-width: 767px) {
-    width: 100%; // スマホでは100%に変更
-    background-color: rgba(255, 255, 255, 0.6); // 少し濃くする例
-    padding: 10px; // 余白追加
+  @include s.respond("tb") {
+    width: 100%;
+    padding: 10px;
     margin-top: 40px;
+  }
+
+  @include s.respond("sp") {
+    padding: 5px;
+    margin-top: 20px;
   }
 }
 
 .main_title {
-  font-size: 160px;
+  font-size: 120px;
   font-family: "Playfair Display", serif;
   font-weight: normal;
-  color: #333;
+  color: #0088FF;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     font-size: 100px;
     padding-top: 20px;
     ;
+  }
+
+  @include s.respond("sp") {
+    font-size: 48px;
+    padding-top: 10px;
+    text-align: center;
   }
 }
 
 .main_subtitle {
   font-size: 64px;
   font-family: "Playfair Display", serif;
-  color: #333;
+  color: #0088FF;
   margin-top: 30px;
+
+  @include s.respond("tb") {
+    font-size: 48px;
+    margin-top: 20px;
+  }
+
+  @include s.respond("sp") {
+    font-size: 28px;
+    margin-top: 15px;
+    text-align: center;
+  }
 }
 
 .main_description {
   font-size: 32px;
   font-family: "Playfair Display", serif;
-  color: #333;
+  color: #0088FF;
   margin-top: 30px;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     font-size: 22px;
+  }
+
+  @include s.respond("sp") {
+    font-size: 16px;
+    margin-top: 12px;
+    line-height: 1.5;
+    text-align: center;
   }
 }
 
@@ -220,7 +257,7 @@ section {
   padding: 20px 140px;
   margin-bottom: 40px;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     flex-direction: column;
     padding: 20px;
   }
@@ -234,7 +271,7 @@ section {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 
-    @include s.respond("sp") {
+    @include s.respond("tb") {
       width: 100%;
       max-width: 320px;
       margin: 0 auto;
@@ -245,7 +282,7 @@ section {
       font-size: 24px;
       font-weight: bold;
 
-      @include s.respond("sp") {
+      @include s.respond("tb") {
         font-size: 20px;
       }
     }
@@ -256,7 +293,7 @@ section {
       list-style: none;
       padding-bottom: 40px;
 
-      @include s.respond("sp") {
+      @include s.respond("tb") {
         font-size: 18px;
       }
     }
@@ -264,7 +301,6 @@ section {
     li {
       text-align: left;
     }
-
   }
 }
 
@@ -276,10 +312,10 @@ section {
   background-image: url("../img/about2.jpg");
   background-size: cover;
   gap: 20px;
-  padding: 20px 140px;
+  padding: 80px 140px;
   margin-bottom: 40px;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     padding: 20px;
   }
 
@@ -294,22 +330,23 @@ section {
 
     .about_item {
       display: flex;
-      align-items: center;
-      gap: 100px;
+      align-items: stretch;
+      gap: 40px;
 
-      @include s.respond("sp") {
+      @include s.respond("tb") {
         flex-direction: column;
+        align-items: center;
         gap: 40px;
       }
 
       img {
-        width: 500px;
-        height: 500px;
+        width: 350px;
+        height: 350px;
         border-radius: 50%;
         box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
         object-fit: cover;
 
-        @include s.respond("sp") {
+        @include s.respond("tb") {
           width: 250px;
           height: 250px;
         }
@@ -318,13 +355,17 @@ section {
       .about_text {
         display: flex;
         flex-direction: column;
+        flex: 1;
+        max-width: 900px;
+        height: auto;
         gap: 10px;
         background-color: rgba(255, 255, 255, 0.7);
         border-radius: 12px;
         padding: 8px 24px;
         margin-top: 20px;
+        box-sizing: border-box;
 
-        @include s.respond("sp") {
+        @include s.respond("tb") {
           padding: 16px;
           margin-top: 0;
         }
@@ -333,7 +374,7 @@ section {
           font-size: 32px;
           font-weight: bold;
 
-          @include s.respond("sp") {
+          @include s.respond("tb") {
             font-size: 24px;
           }
         }
@@ -342,7 +383,7 @@ section {
           text-align: left;
           font-size: 20px;
 
-          @include s.respond("sp") {
+          @include s.respond("tb") {
             font-size: 16px;
           }
         }
@@ -360,7 +401,7 @@ section {
   padding: 20px 140px;
   margin-bottom: 40px;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     flex-direction: column;
     padding: 20px;
   }
@@ -374,7 +415,7 @@ section {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 
-    @include s.respond("sp") {
+    @include s.respond("tb") {
       width: 100%;
       max-width: 320px;
       margin: 0 auto;
@@ -385,7 +426,7 @@ section {
       font-size: 24px;
       font-weight: bold;
 
-      @include s.respond("sp") {
+      @include s.respond("tb") {
         font-size: 24px;
       }
     }
@@ -396,7 +437,7 @@ section {
       margin-right: 30px;
       padding: 20px;
 
-      @include s.respond("sp") {
+      @include s.respond("tb") {
         font-size: 16px;
       }
     }
@@ -412,6 +453,14 @@ section {
   background-color: #CCDDE3;
   gap: 20px;
   padding: 40px 140px;
+
+  @include s.respond("tb") {
+    padding: 30px 40px;
+  }
+
+  @include s.respond("sp") {
+    padding: 20px 5px;
+  }
 
   .contact_container {
     display: flex;
@@ -435,6 +484,18 @@ section {
         text-align: left;
         margin-top: 10px;
         padding-left: 20px;
+
+        @include s.respond("tb") {
+          width: 100%;
+          padding-left: 15px;
+          font-size: 16px;
+        }
+
+        @include s.respond("sp") {
+          width: 100%;
+          padding-left: 10px;
+          font-size: 14px;
+        }
       }
 
       input[type="text"],
@@ -442,16 +503,42 @@ section {
         width: 500px;
         border-radius: 50px;
         border: 1px solid #0088FF;
+
+        @include s.respond("tb") {
+          width: 100%;
+        }
+
+        @include s.respond("sp") {
+          width: 100%;
+        }
       }
 
       input[type="text"] {
         height: 40px;
         margin: auto;
+
+        @include s.respond("tb") {
+          height: 38px;
+        }
+
+        @include s.respond("sp") {
+          height: 36px;
+        }
       }
 
       textarea {
         height: 200px;
         padding: 10px 20px;
+
+        @include s.respond("tb") {
+          height: 150px;
+          padding: 8px 15px;
+        }
+
+        @include s.respond("sp") {
+          height: 120px;
+          padding: 8px 10px;
+        }
       }
     }
 
@@ -459,6 +546,18 @@ section {
       display: inline-block;
       text-align: left;
       margin-top: 30px;
+
+      @include s.respond("tb") {
+        text-align: center;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+
+      @include s.respond("sp") {
+        text-align: left;
+        font-size: 14px;
+        margin-top: 15px;
+      }
     }
   }
 }
