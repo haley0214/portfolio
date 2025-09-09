@@ -2,10 +2,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".header_toggle");
   const menu = document.querySelector(".header_list");
+  const links = menu.querySelectorAll("a"); 
 
   toggle.addEventListener("click", () => {
     toggle.classList.toggle("is-active"); 
     menu.classList.toggle("is-active");   
+  });
+
+  // リンククリックでメニューを閉じる
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      toggle.classList.remove("is-active");
+      menu.classList.remove("is-active");
+    });
   });
 });
 

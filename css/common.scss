@@ -59,6 +59,10 @@ body {
 .my-button--large {
   @include button-style(20px, 32px, 24px);
 
+  @include s.respond("tb") {  
+    @include button-style(14px, 28px, 20px); 
+  }
+
   @include s.respond("sp") {  
     @include button-style(12px, 24px, 16px); 
   }
