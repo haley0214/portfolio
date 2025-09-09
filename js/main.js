@@ -2,10 +2,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".header_toggle");
   const menu = document.querySelector(".header_list");
+  const links = menu.querySelectorAll("a"); 
 
   toggle.addEventListener("click", () => {
     toggle.classList.toggle("is-active"); 
     menu.classList.toggle("is-active");   
+  });
+
+  // リンククリックでメニューを閉じる
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      toggle.classList.remove("is-active");
+      menu.classList.remove("is-active");
+    });
   });
 });
 
@@ -19,28 +28,6 @@ window.addEventListener('scroll', () => {
     header.classList.remove('scrolled');
   }
 });
-
-// スクロールでヘッダー表示・非表示
-
-// const c_header = document.querySelector('.c_header');
-// let lastScroll = 0;
-
-// window.addEventListener('scroll', () => {
-//   const currentScroll = window.pageYOffset;
-
-//   if (currentScroll > lastScroll) {
-//     // 下にスクロール → ヘッダーを上に隠す
-//     header.style.transform = 'translateY(-100%)';
-//   } else {
-//     // 上にスクロール → ヘッダーを表示
-//     header.style.transform = 'translateY(0)';
-//   }
-
-//   lastScroll = currentScroll;
-// });
-
-
-
 
 
 // aboutセクションのアニメーション
@@ -68,28 +55,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
-  // ナビゲーションリンクと対象セクションの対応
   const links = document.querySelectorAll('.header_item a');
 
   links.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault(); // デフォルトのリンク動作を無効化
+      e.preventDefault();
 
-      // リンクテキストで対象セクションを判別
-      const targetText = link.textContent.trim().toLowerCase(); // works, about, service, contact
-      let targetSection;
+      const targetText = link.textContent.trim().toLowerCase(); // works, about...
+      let selector;
 
-      if (targetText === 'works') targetSection = document.querySelector('.work_wrapper');
-      if (targetText === 'about') targetSection = document.querySelector('.about_wrapper');
-      if (targetText === 'service') targetSection = document.querySelector('.service_wrapper');
-      if (targetText === 'contact') targetSection = document.querySelector('.contact_wrapper');
+      if (targetText === 'works') selector = '.work_wrapper';
+      if (targetText === 'about') selector = '.about_wrapper';
+      if (targetText === 'service') selector = '.service_wrapper';
+      if (targetText === 'contact') selector = '.contact_wrapper';
 
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+      // 今のページが index.html かどうかを判定
+      const onIndex = location.pathname.endsWith('index.html') || location.pathname === '/';
+
+      if (onIndex) {
+        // index.html ならその場でスクロール
+        const targetSection = document.querySelector(selector);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // 下層ページなら index.html に移動（ハッシュを利用）
+        window.location.href = `index.html#${targetText}`;
       }
     });
   });
+
+  // index.html に来たとき、ハッシュがあればスクロール
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const targetSection = document.querySelector(`.${hash}_wrapper`);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 });
 
 

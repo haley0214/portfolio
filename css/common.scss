@@ -18,8 +18,12 @@ body {
   flex-direction: column;
   gap: 0;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     padding-top: 0;
+  }
+  @include s.respond("sp") {
+    padding-top: 60px;   
+    flex-direction: column;         
   }
 }
 
@@ -55,30 +59,42 @@ body {
 .my-button--large {
   @include button-style(20px, 32px, 24px);
 
+  @include s.respond("tb") {  
+    @include button-style(14px, 28px, 20px); 
+  }
+
   @include s.respond("sp") {  
     @include button-style(12px, 24px, 16px); 
   }
 }
 
 
-.my-button:hover {
+.my-button:hover,
+.my-button--large:hover {
   background-color: #0056b3;
 }
+
 
 .section_title {
   text-align: left;
   margin-left: 0;
   padding-top: 30px;
-  font-size: 120px;
+  font-size: 64px;
   font-family: "Playfair Display", serif;
   margin: 0 0 40px 0;
   position: relative;
   width: 100%;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     font-size: 60px;
     padding-top: 60px;
     margin-bottom: 20px;
+  }
+  @include s.respond("sp") {
+    font-size: 36px;     
+    padding-top: 40px;   
+    margin-bottom: 16px; 
+    text-align: center;  
   }
 }
 
@@ -93,12 +109,12 @@ body {
   min-height: 100vh;
   margin-top: 60px;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    margin-top: 0; // スマホ用に余白をリセット
+    margin-top: 0; 
   }
 }
 
@@ -111,7 +127,7 @@ body {
   position: relative;
   width: 100%;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     font-size: 48px;
     padding: 40px 0 20px 0;
     margin: 100px 0 20px 0; 
@@ -128,9 +144,9 @@ body {
   width: 100%;
   box-sizing: border-box;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 20px;
   }
 }
 
@@ -141,7 +157,7 @@ body {
   object-fit: cover;
   border-radius: 8px;
 
-  @include s.respond("sp") {
+  @include s.respond("tb") {
     aspect-ratio: 1 / 1;
     border-radius: 12px;
   }
@@ -161,8 +177,28 @@ body {
   align-items: center;
   justify-content: center;
   height: 80px;
+
+  @include s.respond("tb") {
+    height: 70px;        
+    padding: 8px;
+  }
+
+  @include s.respond("sp") {
+    height: 60px;        
+    padding: 5px;
+    background-position: top;  
+  }
 }
 
 .footer_text {
   font-size: 20px;
+
+  @include s.respond("tb") {
+    font-size: 18px;
+  }
+
+  @include s.respond("sp") {
+    font-size: 16px;
+    text-align: center;  
+  }
 }

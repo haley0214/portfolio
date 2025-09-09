@@ -4,7 +4,8 @@
 @use 'sass:map';
 
 $breakpoints: (
-  "sp": "(max-width: 767px)"
+  "tb": "(max-width: 767px)",
+  "sp": "(max-width: 370px)"
 );
 
 @mixin respond($point) {
