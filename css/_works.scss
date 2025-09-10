@@ -23,6 +23,11 @@
       background-position: top;
       background-size: contain;
     }
+
+    @include s.respond("sp") {
+      padding: 10px 0;
+      gap: 20px;
+    }
   }
 
   &_item {
@@ -44,6 +49,11 @@
       padding: 10px;
       max-width: 100%;
     }
+
+    @include s.respond("sp") {
+      padding: 5px;
+      gap: 15px;
+    }
   }
 
   &_img {
@@ -60,12 +70,24 @@
         display: block;
         margin: 0 auto;
       }
+
+      @include s.respond("tb") {
+        max-width: 100%;
+      }
     }
   }
 
   &_content {
     flex: 1;
     padding-right: 60px;
+
+    @include s.respond("tb") {
+      padding: 10px;
+    }
+
+    @include s.respond("sp") {
+      padding: 5px;
+    }
 
     ul {
       margin: 0 0 15px;
@@ -75,6 +97,14 @@
       li {
         font-size: 20px;
         text-align: left;
+
+        @include s.respond("tb") {
+          font-size: 18px;
+        }
+
+        @include s.respond("sp") {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -84,15 +114,39 @@
     font-weight: bold;
     margin: 0 0 10px;
     text-align: left;
+
+    @include s.respond("tb") {
+      font-size: 28px;
+    }
+
+    @include s.respond("sp") {
+      font-size: 24px;
+    }
   }
 
   &_description {
     font-size: 24px;
     text-align: left;
     margin: 20px 0;
+
+    @include s.respond("tb") {
+      font-size: 18px;
+    }
+
+    @include s.respond("sp") {
+      font-size: 16px;
+    }
   }
 }
 
 .my-button {
   margin-bottom: 60px;
+
+  @include s.respond("tb") {
+    margin-bottom: 30px;
+  }
+
+  @include s.respond("sp") {
+    margin-bottom: 20px;
+  }
 }
